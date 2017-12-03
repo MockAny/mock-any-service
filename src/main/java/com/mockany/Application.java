@@ -1,4 +1,4 @@
-package com.mockany.service;
+package com.mockany;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import static org.springframework.boot.SpringApplication.run;
 
 @SpringBootApplication
-public class MockAnyService {
+public class Application {
 
 	public static void main(String[] args) {
-		run( MockAnyService.class, args );
+		run( Application.class, args );
 	}
 }
