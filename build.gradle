@@ -25,6 +25,10 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+    
     compile group: 'org.json', name: 'json', version: '20160810'
+	testCompile group: 'de.flapdoodle.embed', name: 'de.flapdoodle.embed.mongo', version: '2.0.0'
+	
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
