@@ -1,3 +1,33 @@
 language: java
 jdk:
  - oraclejdk8
+
+services:
+ - mongodb
+
+
+deploy:
+ - provider: s3
+   access_key_id: $AWS_ACCESS_KEY
+   secret_access_key: $AWS_SECRET_KEY
+    local_dir: dpl_cd_upload
+    skip_cleanup: true
+    on: &2
+      repo: mockAny/mock-any-service
+    bucket: mockany
+    region: us-east-1
+ -  provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: mockany
+    key: latest.zip
+    bundle_type: zip
+    application: NameOfTheCodeDeployApplicationNameHERE
+    deployment_group: CodeDeployDeploymentGroupNameHERE
+    region: us-east-1
+    on: *2
+
+script:
+  - zip -r latest *
+  - mkdir -p dpl_cd_upload
+  - mv latest.zip dpl_cd_upload/latest.zip
