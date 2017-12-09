@@ -12,7 +12,7 @@ deploy:
   local_dir: dpl_cd_upload
   skip_cleanup: true
   on: &2
-    repo: mockAny/mock-any-service
+    repo: MockAny/mock-any-service
   bucket: mockany
   region: us-east-1
 - provider: codedeploy
