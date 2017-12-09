@@ -24,7 +24,7 @@ deploy:
   bundle_type: zip
   application: MockAny
   deployment_group: applications
-  region: us-east-2
+  region: us-east-1
   on: *2
   
 script:
