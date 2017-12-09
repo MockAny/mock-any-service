@@ -13,6 +13,7 @@ deploy:
   skip_cleanup: true
   on: &2
     repo: MockAny/mock-any-service
+    all_branches: true
   bucket: mockany
   region: us-east-2
 - provider: codedeploy
@@ -25,6 +26,7 @@ deploy:
   deployment_group: applications
   region: us-east-1
   on: *2
+    all_branches: true
   
 script:
   - zip -r latest build/libs/mock-any-service*.jar
