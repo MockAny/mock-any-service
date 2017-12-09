@@ -13,8 +13,9 @@ deploy:
   skip_cleanup: true
   on: &2
     repo: MockAny/mock-any-service
+    all_branches: true
   bucket: mockany
-  region: us-east-1
+  region: us-east-2
 - provider: codedeploy
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
@@ -27,6 +28,6 @@ deploy:
   on: *2
   
 script:
-  - zip -r latest *
+  - zip -r latest build/libs/mock-any-service*.jar
   - mkdir -p dpl_cd_upload
   - mv latest.zip dpl_cd_upload/latest.zip
