@@ -24,10 +24,10 @@ deploy:
   bundle_type: zip
   application: MockAny
   deployment_group: applications
-  region: us-east-1
+  region: us-east-2
   on: *2
   
 script:
-  - zip -r latest *
+  - zip -r latest build/libs/mock-any-service*.jar
   - mkdir -p dpl_cd_upload
   - mv latest.zip dpl_cd_upload/latest.zip
