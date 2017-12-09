@@ -26,7 +26,6 @@ deploy:
   deployment_group: applications
   region: us-east-1
   on: *2
-    all_branches: true
   
 script:
   - zip -r latest build/libs/mock-any-service*.jar
