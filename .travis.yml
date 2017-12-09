@@ -14,12 +14,12 @@ deploy:
   on: &2
     repo: MockAny/mock-any-service
     all_branches: true
-  bucket: mockany
-  region: us-east-2
+  bucket: mockanyservice
+  region: us-east-1
 - provider: codedeploy
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  bucket: mockany
+  bucket: mockanyservice
   key: latest.zip
   bundle_type: zip
   application: MockAny
