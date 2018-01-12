@@ -1,4 +1,4 @@
-package com.mockany.service;
+package com.mockany;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
